@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+
+
+
+dependencies {
+    compile files("../lib/enunciate/lib/enunciate-core-annotations-1.30.jar")
+    compile 'org.jboss.spec:jboss-javaee-6.0:3.0.2.Final'
+	testCompile "junit:junit:4.11"
+	compile 'org.codehaus.jackson:jackson-jaxrs:1.9.2'
+	
+}
+
+

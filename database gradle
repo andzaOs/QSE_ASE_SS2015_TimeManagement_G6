@@ -1,0 +1,37 @@
+
+repositories {
+    mavenCentral()
+   	maven {
+        url "http://repo1.maven.org/maven2/"
+    }
+}
+
+//database------------]
+import groovy.sql.*
+configurations {
+    driver
+}
+dependencies {
+	driver 'com.h2database:h2:1.4.187'
+}
+URLClassLoader loader = GroovyObject.class.classLoader
+configurations.driver.each {File file ->
+    loader.addURL(file.toURL())
+}
+task cargoRun<<{
+
+	def db = [
+	  url: 'jdbc:h2:~/ASE',
+	  user: 'sa',
+	  password: '',
+	  driver: 'org.h2.Driver'
+	]
+	
+	def sql = Sql.newInstance(db.url, db.user, db.password, db.driver)
+	String sqlString = new File("sql/tables.sql").text
+        sql.execute(sqlString)	 
+
+}
+
+
+//---------------

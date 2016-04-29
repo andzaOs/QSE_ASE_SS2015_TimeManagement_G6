@@ -1,0 +1,297 @@
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-cargo-plugin:2.0.1'
+
+    }
+}
+
+allprojects{
+	repositories {
+	    mavenCentral()
+	   	maven {
+		url "http://repo1.maven.org/maven2/"
+	    }
+    maven { url 'https://repository.jboss.org/nexus/content/groups/public-jboss' }  
+    maven { url 'https://repository.jboss.org/nexus/content/repositories' }  
+    maven { url 'https://repository.jboss.org/nexus/content/repositories/thirdparty-releases' }  
+
+	}
+
+}
+
+
+apply plugin: 'ear'
+apply plugin: 'com.bmuschko.cargo'
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+
+
+dependencies {
+  deploy project(path:':web', configuration:'archives')
+  deploy project(':businessEjb')
+
+  deploy project(':dao')
+  earlib project(':daoInterface')
+  earlib project(':businessInterface')
+  earlib 'javax.ws.rs:javax.ws.rs-api:2.0'
+  earlib project(':common')
+  earlib 'org.apache.poi:poi:3.9'
+  earlib 'org.apache.poi:ooxml-schemas:1.1'
+  earlib 'org.apache.poi:poi-ooxml:3.9'
+  earlib 'org.apache.xmlbeans:xmlbeans:2.3.0'
+  earlib 'com.google.collections:google-collections:1.0-rc2'
+  if(project.getGradle().getStartParameter().getTaskRequests().args[0]!=null){
+	  if( project.getGradle().getStartParameter().getTaskRequests().args[0].contains("test")){//test libs 
+	      earlib  'com.jayway.restassured:rest-assured:2.4.1'
+	      earlib  'org.mockito:mockito-all:1.10.19'
+  	   }
+  }
+
+}
+
+configurations.earlib.exclude module: "guava"
+configurations.earlib.exclude module: "h2"
+configurations.earlib.exclude module: "resteasy-jaxrs"
+configurations.earlib.exclude module: "resteasy-multipart-provider"
+
+task cargoRestartLocal(type: CargoRestartLocal) {
+
+	doFirst{
+	
+	     deployables = [];
+		 new Thread(){
+		      public void run(){
+			runH2.exec()
+		      }
+		    }.start();
+			
+	
+}
+
+
+}
+
+
+
+task cargoJunitStart(type: CargoRunWithoutDeploy) {
+
+	doFirst{
+	
+	     deployables = [];
+		 new Thread(){
+		      public void run(){
+			runH2.exec()
+		      }
+		    }.start();
+			
+	
+}
+
+
+}
+
+cargo{
+		
+		containerId="jboss71x"
+		File jb= file("${rootDir}/jboss7");//jboss home
+		File cdir = file(System.getProperty("java.io.tmpdir")+"/jbossdeploy/")
+	
+		local{
+			cdir.mkdirs()
+ 			configHomeDir=cdir
+			
+			jvmArgs=  '-Xmx1024m'
+			
+
+			containerProperties {
+		            property 'cargo.jboss.management-http.port', 12345
+        		}
+			configFile{
+				file=new File ( "dao/src/main/resources/ase-ds.xml")
+				    toDir = new File ("/deployments")
+			}
+
+ 			logLevel="medium"
+			jb.mkdirs();
+			homeDir =jb
+			installer {
+	            installUrl = 'http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip'
+	            downloadDir = file("$jb/")
+	            extractDir = file("$jb/")
+	            
+        	}
+		}
+		deployable {
+        	file = file('build/libs/ASE.ear')
+		
+        
+       		 }
+		
+
+		
+	}
+	cargoRunLocal{
+		dependsOn ear
+	
+	}
+
+ear{
+	archiveName "ASE.ear"
+
+}
+//h2------------
+
+
+
+task webH2(type: JavaExec){
+
+     outputs.upToDateWhen { false }
+    main = 'org.h2.tools.Console'
+    classpath = files("lib/h2/h2Database.jar")
+    args '-web'
+
+}
+
+task runH2(type: JavaExec){
+
+     outputs.upToDateWhen { false }
+    main = 'org.h2.tools.Console'
+    classpath = files("lib/h2/h2Database.jar")
+    args '-tcp'
+	
+}
+
+
+cargoRunLocal.doFirst{
+
+	 new Thread(){
+	      public void run(){
+		runH2.exec()
+	      }
+	    }.start();
+
+}
+
+
+task saveDatabase(type: JavaExec){
+	// java -cp lib/h2/h2Database.jar org.h2.tools.Backup -file "lib/ASE_sql_data.zip" -dir "~" -db "ASE"
+
+
+	    main = "org.h2.tools.Backup"
+	    classpath =  files("lib/h2/h2Database.jar")
+	    args "-file", "lib/ASE_sql_data.zip" ,"-dir",".","-db", "ASE"
+	
+
+}
+
+
+task restoreDatabase(type: JavaExec){
+	//java -cp h2*.jar org.h2.tools.Restore -file "lib/ASE_sql_data.zip" -dir "~" -db "ASE"
+
+
+
+	    main = "org.h2.tools.Restore"
+	    classpath =  files("lib/h2/h2Database.jar")
+	    args "-file", "lib/ASE_sql_data.zip" ,"-dir",".","-db", "ASE"
+		
+
+}
+
+//---------------Help Class
+
+/**
+ * restart the local container, deploys web application to it and wait for the user to press CTRL + C to stop.
+ */
+class CargoRestartLocal extends  com.bmuschko.gradle.cargo.tasks.local.LocalCargoContainerTask {
+    CargoRestartLocal() {
+        action = 'restart'
+        description = 'restarts the container, deploys a deployable and waita for the user to press CTRL + C to stop.'
+    }
+     void validateConfiguration() {
+    
+        if(!getDeployables().isEmpty()) {
+            getDeployables().each { deployable ->
+                if(deployable.file && !deployable.file.exists()) {
+                    throw new InvalidUserDataException("Deployable "
+                            + (deployable.file == null ? "null" : deployable.file.canonicalPath)
+                            + " does not exist")
+                }
+            }
+
+            logger.info "Deployable artifacts = ${getDeployables().collect { it.file.canonicalPath }}"
+        }
+
+        if(!getConfigFiles().isEmpty()) {
+            getConfigFiles().each { configFile ->
+                if(!configFile.file || !configFile.file.exists()) {
+                    throw new InvalidUserDataException("Config file "
+                    + (configFile.file == null ? "null" : configFile.file.canonicalPath)
+                    + " does not exist")
+                }
+            }
+
+            logger.info "Config files = ${getConfigFiles().collect { it.file.canonicalPath + " -> " + it.toDir.canonicalPath }}"
+        }
+
+        if (!getFiles().isEmpty()) {
+            getFiles().each { binFile ->
+                if (!binFile.file || !binFile.file.exists()) {
+                    throw new InvalidUserDataException("Binary File "
+                    + (binFile.file == null ? "null" : binFile.file.canonicalPath)
+                    + " does not exist")
+                }
+            }
+            logger.info "Binary files = ${getFiles().collect { it.file.canonicalPath + " -> " + it.toDir.canonicalPath }}"
+        }
+    }
+}
+
+
+class CargoRunWithoutDeploy extends com.bmuschko.gradle.cargo.tasks.local.CargoStartLocal {
+ @Override
+    void validateConfiguration() {
+    
+        if(!getDeployables().isEmpty()) {
+            getDeployables().each { deployable ->
+                if(deployable.file && !deployable.file.exists()) {
+                    throw new InvalidUserDataException("Deployable "
+                            + (deployable.file == null ? "null" : deployable.file.canonicalPath)
+                            + " does not exist")
+                }
+            }
+
+            logger.info "Deployable artifacts = ${getDeployables().collect { it.file.canonicalPath }}"
+        }
+
+        if(!getConfigFiles().isEmpty()) {
+            getConfigFiles().each { configFile ->
+                if(!configFile.file || !configFile.file.exists()) {
+                    throw new InvalidUserDataException("Config file "
+                    + (configFile.file == null ? "null" : configFile.file.canonicalPath)
+                    + " does not exist")
+                }
+            }
+
+            logger.info "Config files = ${getConfigFiles().collect { it.file.canonicalPath + " -> " + it.toDir.canonicalPath }}"
+        }
+
+        if (!getFiles().isEmpty()) {
+            getFiles().each { binFile ->
+                if (!binFile.file || !binFile.file.exists()) {
+                    throw new InvalidUserDataException("Binary File "
+                    + (binFile.file == null ? "null" : binFile.file.canonicalPath)
+                    + " does not exist")
+                }
+            }
+            logger.info "Binary files = ${getFiles().collect { it.file.canonicalPath + " -> " + it.toDir.canonicalPath }}"
+        }
+    }
+}

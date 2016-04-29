@@ -1,0 +1,140 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'    
+jacoco {  
+    toolVersion = '0.7.4.201502262128'      
+    reportsDir = file("$buildDir/jacoco")    
+
+
+}
+dependencies {
+	testCompile "junit:junit:4.11"
+	compile 'javax.ws.rs:javax.ws.rs-api:2.0'
+	compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.9.Final'
+	
+	testCompile 'org.jboss.arquillian.extension:arquillian-jacoco:1.0.0.Alpha8'
+ testCompile 'org.mockito:mockito-all:1.10.19'
+ 
+	compile rootProject.findProject('businessInterface')
+	compile rootProject.findProject('common')
+	compile rootProject.findProject('daoInterface')
+    compile 'org.jboss.spec:jboss-javaee-6.0:3.0.2.Final'
+     testCompile 'org.jboss.as:jboss-as-arquillian-container-remote:7.1.1.Final'
+     testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.1.Final'
+     testCompile 'org.jboss.arquillian.protocol:arquillian-protocol-servlet:1.1.1.Final'
+     testCompile 'org.jboss.arquillian.extension:arquillian-transaction-jta:1.0.1.Final'
+     testCompile 'com.jayway.restassured:rest-assured:2.4.1'
+	
+	 testCompile 'com.fasterxml:jackson-module-json-org:0.9.1'
+     
+     
+      testRuntime 'org.jboss.as:jboss-as-arquillian-container-remote:7.1.1.Final'
+     testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.1.Final'
+     testCompile 'org.jboss.arquillian.protocol:arquillian-protocol-servlet:1.1.1.Final'
+     testCompile 'org.jboss.arquillian.extension:arquillian-transaction-jta:1.0.1.Final'
+     testCompile 'com.jayway.restassured:rest-assured:2.4.1'
+     
+     testCompile 'org.eu.ingwar.tools:arquillian-suite-extension:1.0.4'
+
+	 compile 'org.apache.poi:poi:3.9'
+	 compile 'org.apache.poi:ooxml-schemas:1.1'
+	 compile 'org.apache.poi:poi-ooxml:3.9'
+	 compile 'org.apache.xmlbeans:xmlbeans:2.3.0'
+
+	 compile 'com.google.collections:google-collections:1.0-rc2'
+	 
+	 compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.4.Final'
+	 compile 'org.jboss.resteasy:resteasy-multipart-provider:3.0.4.Final'
+
+}
+sourceSets {     
+ test.runtimeClasspath += configurations.jacocoAnt 
+
+ }   
+
+task copyEar(type: Copy) {
+	dependsOn rootProject.ear
+	from '../build/libs/ASE.ear'
+    into 'build'
+
+}
+  task copyTestResources(type: Copy) {
+    from 'src/test/resources'
+    into  rootProject.cargo.local.configHomeDir
+}
+test{
+      
+        dependsOn copyEar
+        dependsOn copyTestResources
+        doFirst{
+	  	   new Thread(){
+	  	     public void run(){
+			      rootProject.runH2.exec()
+	 	      }
+		     }.start();
+	    	 
+	    	 
+	    
+
+        }
+   
+      dependsOn rootProject.cargoJunitStart
+     
+       
+       finalizedBy rootProject.cargoStopLocal
+
+       environment 'JBOSS_HOME', "${rootDir}/jboss7/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final/"  
+	
+}
+
+
+
+//---------------------------------REST DOC
+
+task enunciate(type:Exec) {
+	dependsOn jar
+	def names = ""
+	fileTree("../common/src/main/java/at/tuwien/ase/model/").include('**/*.java') .visit { FileVisitDetails details -> 
+		if(!	details.file.isDirectory()){
+	    	names += " "+details.file.path 
+		}
+	}
+
+
+
+fileTree("src/main/java/at/tuwien/ase/rest/").include('**/*.java') .visit { FileVisitDetails details -> 
+		if(!	details.file.isDirectory()){
+	    	names += " "+details.file.path 
+		}
+	}
+
+	doFirst{
+		//println commandLine
+	}
+	 
+	//on linux
+	commandLine "../lib/enunciate/bin/enunciate", "-Edocs ${buildDir}/doc.zip -v -cp " + configurations.compile.asPath +":build/libs/businessEjb.jar "  +names
+	  
+
+
+	standardOutput = new ByteArrayOutputStream()
+
+	ext.output = {
+	    return standardOutput.toString()
+	}
+	
+}
+	
+
+task generateDoc(type: Copy) {
+    dependsOn  enunciate
+    def zipFile = file("${buildDir}/doc.zip")
+    def outputDir = file("${buildDir}/doc")
+    doFirst{
+	 outputDir.mkdirs()
+    }
+
+   
+    from zipTree(zipFile)
+    into outputDir
+}
+

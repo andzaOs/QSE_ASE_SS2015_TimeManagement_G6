@@ -1,0 +1,68 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'    
+jacoco {  
+    toolVersion = '0.7.4.201502262128'      
+    reportsDir = file("$buildDir/jacoco")    
+
+
+}
+
+
+
+dependencies {
+	compile rootProject.findProject('daoInterface')
+	testCompile "junit:junit:4.11"
+	testCompile 'org.jboss.arquillian.extension:arquillian-jacoco:1.0.0.Alpha8'
+	
+
+	compile  'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final'
+        compile 'org.jboss.spec:jboss-javaee-6.0:3.0.2.Final'
+        compile 'org.hibernate:hibernate-core:4.0.1.Final'	
+        compile rootProject.findProject('common')
+
+     testRuntime 'org.jboss.as:jboss-as-arquillian-container-remote:7.1.1.Final'
+     testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.1.Final'
+     testCompile 'org.jboss.arquillian.protocol:arquillian-protocol-servlet:1.1.1.Final'
+     testCompile 'org.jboss.arquillian.extension:arquillian-transaction-jta:1.0.1.Final'
+
+     
+     testCompile 'org.eu.ingwar.tools:arquillian-suite-extension:1.0.4'
+
+}
+sourceSets {     
+ test.runtimeClasspath += configurations.jacocoAnt 
+
+ } 
+task copyEar(type: Copy) {
+	dependsOn rootProject.ear
+	from '../build/libs/ASE.ear'
+    into 'build'
+
+}
+
+
+test{
+        
+        dependsOn copyEar
+        doFirst{
+    
+	  	   new Thread(){
+	  	     public void run(){
+			      rootProject.runH2.exec()
+	 	      }
+		     }.start();
+	    	 
+	    	 
+	    
+
+        }
+   
+      dependsOn rootProject.cargoJunitStart
+          dependsOn rootProject.cargoRestartLocal
+     
+       
+       finalizedBy rootProject.cargoStopLocal
+
+       environment 'JBOSS_HOME', "${rootDir}/jboss7/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final/"  
+}
+	

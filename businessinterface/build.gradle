@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+
+
+
+dependencies {
+   compile rootProject.findProject('daoInterface')
+    testCompile "junit:junit:4.11"
+	compile 'org.jboss.spec:jboss-javaee-6.0:3.0.2.Final'
+	
+	compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.4.Final'
+	compile 'org.jboss.resteasy:resteasy-multipart-provider:3.0.4.Final'
+}
+
+

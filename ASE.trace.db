@@ -1,0 +1,40 @@
+06-30 16:54:47 database: close
+org.h2.message.DbException: IO Exception: "java.io.EOFException"; "/Users/anelaosmanovic/git/QSE_ASE_SS15_06/ASE.h2.db" [90031-161]
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1260)
+	at org.h2.store.PageStore.getPage(PageStore.java:712)
+	at org.h2.store.PageStreamTrunk$Iterator.next(PageStreamTrunk.java:247)
+	at org.h2.store.PageLog.free(PageLog.java:210)
+	at org.h2.store.PageStore.compact(PageStore.java:468)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1169)
+	at org.h2.engine.Database.close(Database.java:1119)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:80)
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "/Users/anelaosmanovic/git/QSE_ASE_SS15_06/ASE.h2.db" [90031-161]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	... 11 more
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 8 more
+06-30 17:51:31 database: close
+org.h2.message.DbException: IO Exception: "java.io.EOFException"; "/Users/anelaosmanovic/git/QSE_ASE_SS15_06/ASE.h2.db" [90031-161]
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.message.DbException.convertIOException(DbException.java:315)
+	at org.h2.store.FileStore.readFully(FileStore.java:278)
+	at org.h2.store.PageStore.readPage(PageStore.java:1260)
+	at org.h2.store.PageStore.getPage(PageStore.java:712)
+	at org.h2.store.PageStreamTrunk$Iterator.next(PageStreamTrunk.java:247)
+	at org.h2.store.PageLog.free(PageLog.java:210)
+	at org.h2.store.PageStore.compact(PageStore.java:468)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1169)
+	at org.h2.engine.Database.close(Database.java:1119)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:80)
+Caused by: org.h2.jdbc.JdbcSQLException: IO Exception: "java.io.EOFException"; "/Users/anelaosmanovic/git/QSE_ASE_SS15_06/ASE.h2.db" [90031-161]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	... 11 more
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
+	at org.h2.store.FileStore.readFully(FileStore.java:276)
+	... 8 more

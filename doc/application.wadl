@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wadl:application xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <wadl:doc xmlns:enunciate="http://enunciate.codehaus.org/" enunciate:generatedBy="Enunciate-1.30"/>
+  <wadl:grammars/>
+  <wadl:resources base="http://localhost:8080/enunciate">
+    <wadl:resource path="/rest/AdministrationRest/populate">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/AdministrationRest/populate">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/CategoryRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/CategoryRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/CategoryRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/CategoryRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/CategoryRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/CompanyRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/CompanyRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/CompanyRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/CompanyRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/CompanyRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/ProjectRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectTypeRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectTypeRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectTypeRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/ProjectTypeRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectTypeRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ResourceRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ResourceRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ResourceRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ResourceRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ResourceUsageRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ResourceUsageRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ResourceUsageRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/ResourceUsageRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ResourceUsageRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/approve">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/TaskReportRest/approve">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/approve">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/TaskReportRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/reject">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/TaskReportRest/reject">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/reject">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/TaskRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskTypeRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskTypeRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskTypeRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/TaskTypeRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskTypeRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/UserRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/UserRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/UserRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/UserRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/UserRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/UserRest/updatePassword">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/UserRest/updatePassword">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/UserRest/updatePassword">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/WorkingObjectRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/WorkingObjectRest/listAll">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/WorkingObjectRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/WorkingObjectRest/persist">
+      <wadl:method name="POST">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/WorkingObjectRest/persist">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/files/uploadTaskTypes">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="multipart/form-data"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/files/uploadTaskTypes">
+      <wadl:method name="POST">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/files/uploadUsers">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="multipart/form-data"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/files/uploadUsers">
+      <wadl:method name="POST">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/files/uploadWorkingObjects">
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="multipart/form-data"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/files/uploadWorkingObjects">
+      <wadl:method name="POST">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/CategoryRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/CategoryRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/CategoryRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/CategoryRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/CategoryRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/CompanyRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/CompanyRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/CompanyRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/CompanyRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/CompanyRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/ProjectRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectRest/getProjectItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectRest/getProjectItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectTypeRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/ProjectTypeRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectTypeRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectTypeRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectTypeRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ReportRest/reportFinishedTotalTasksPerProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ReportRest/reportFinishedTotalTasksPerProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ReportRest/reportTotalHoursForProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ReportRest/reportTotalHoursForProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ReportRest/reportTotalTasksPerProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ReportRest/reportTotalTasksPerProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ResourceRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ResourceRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ResourceRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ResourceRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ResourceRest/listAllForTaskType/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ResourceRest/listAllForTaskType/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ResourceUsageRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/ResourceUsageRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ResourceUsageRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ResourceUsageRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ResourceUsageRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/TaskReportRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/getLatest10TaskReportForProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/getLatest10TaskReportForProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/getReportsToApproveByApproveId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/getReportsToApproveByApproveId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/getTaskReportsForProject/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/getTaskReportsForProject/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/getTaskReportsForWorker/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/getTaskReportsForWorker/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskReportRest/listAllForWorker/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskReportRest/listAllForWorker/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/TaskRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskRest/listTasksForApproverId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskRest/listTasksForApproverId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskRest/listTasksForUserId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskRest/listTasksForUserId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskRest/listTasksWhichAreNotApprovedForApproverId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskRest/listTasksWhichAreNotApprovedForApproverId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskTypeRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/TaskTypeRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskTypeRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskTypeRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskTypeRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/UserRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/UserRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/UserRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/UserRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/UserRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/UserRest/getWorkingWorkersForProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/UserRest/getWorkingWorkersForProjectId/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/WorkingObjectRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/xml/WorkingObjectRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/WorkingObjectRest/delete/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/WorkingObjectRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/WorkingObjectRest/getItem/{id}">
+      <wadl:param name="id" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/LoginRest/login/{username}/{password}">
+      <wadl:param name="username" style="template"/>
+      <wadl:param name="password" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/LoginRest/login/{username}/{password}">
+      <wadl:param name="username" style="template"/>
+      <wadl:param name="password" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/TaskRest/listTasksPaged/{projectId}/{page}">
+      <wadl:param name="projectId" style="template"/>
+      <wadl:param name="page" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/TaskRest/listTasksPaged/{projectId}/{page}">
+      <wadl:param name="projectId" style="template"/>
+      <wadl:param name="page" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectStatisticsRest/getStatisticsForProject/{id}/{begin}/{end}">
+      <wadl:param name="id" style="template"/>
+      <wadl:param name="begin" style="template"/>
+      <wadl:param name="end" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectStatisticsRest/getStatisticsForProject/{id}/{begin}/{end}">
+      <wadl:param name="id" style="template"/>
+      <wadl:param name="begin" style="template"/>
+      <wadl:param name="end" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/rest/ProjectStatisticsRest/getWorkerHoursForProject/{id}/{begin}/{end}">
+      <wadl:param name="id" style="template"/>
+      <wadl:param name="begin" style="template"/>
+      <wadl:param name="end" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/json/ProjectStatisticsRest/getWorkerHoursForProject/{id}/{begin}/{end}">
+      <wadl:param name="id" style="template"/>
+      <wadl:param name="begin" style="template"/>
+      <wadl:param name="end" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+  </wadl:resources>
+</wadl:application>

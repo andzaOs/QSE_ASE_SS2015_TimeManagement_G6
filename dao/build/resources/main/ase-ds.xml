@@ -1,0 +1,41 @@
+<datasources>
+   <datasource jndi-name="AseDataSource" pool-name="ASE">
+
+      <connection-url>jdbc:h2:tcp://localhost/ASE</connection-url>
+
+         <driver>h2</driver>
+
+      <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+
+      <pool>
+
+        <min-pool-size>10</min-pool-size>
+
+        <max-pool-size>100</max-pool-size>
+
+        <prefill>true</prefill>
+
+      </pool>
+
+      <security>
+
+        <user-name>sa</user-name>
+
+        <password></password>
+
+      </security>
+
+      <statement>
+
+        <prepared-statement-cache-size>32</prepared-statement-cache-size>
+
+        <share-prepared-statements/>
+
+
+      </statement>
+
+    </datasource>
+
+
+</datasources>
+
