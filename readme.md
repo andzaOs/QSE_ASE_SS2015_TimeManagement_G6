@@ -16,7 +16,7 @@ Team work - group of 5 people
 
 **IDE:** Eclipse
 
-**Role:** Frontend developer (worked with Flux, Gradle, React.js, Bootstrap, Git)
+**Role:** UI Design, Frontend Developer (worked with Flux, Gradle, React.js, Bootstrap, Git)
 
 **Responsibilities:** https://github.com/aosmanovic/QSE_ASE_SS2015_G6/blob/master/Documentation/WorkingHoursAnela.pdf
 
