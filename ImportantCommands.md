@@ -1,30 +1,54 @@
-################TASKS######################
-#./gradlew ear
+###Tasks
+
+######./gradlew ear
+
 compile  and create ear (location build/libs)
 
-#./gradlew cargoRun --info 
+######./gradlew cargoRun --info 
+
 start jboss to view the result open browser on http://localhost:8080/web/
-#./gradlew test
+
+######./gradlew test
+
 run tests 
-#./gradlew  runH2
+
+######./gradlew  runH2
+
 starts a h2 database you dont have to invoke this commat it is called automaticaly by cargoRun
-#./gradlew webH2
+
+######./gradlew webH2
+
 start a h2 webservice which can be used to manage the embeded db  (select generic h2 server)
+
 the connection string is jdbc:h2:tcp://localhost/~/ASE
-################Folders/Projects######################
-#businessEjb 
+
+###Folders/Projects
+
+######businessEjb 
+
 contains the bussines logic also provides rest interface
-#businessInterface 
+
+######businessInterface 
+
 interfaces for the bussineslogic (required for ejb)
-#common 
+
+######common 
 Included by all pojects currently contains model classes
-#dao
+
+######dao
+
 Session beans for database operations ie Data Access Objects
-#daoInterface  
+
+######daoInterface 
+
 Interfaces for Daso beans
-#lib 
+
+######lib 
+
 java library files contains h2 database stuff
-#web
+
+######web
+
 the web project contains jsp js css ... 
 
 =======
