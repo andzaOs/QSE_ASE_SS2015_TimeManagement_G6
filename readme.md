@@ -18,7 +18,7 @@ Team work - group of 5 people
 
 **Technologies:** EJB, JBoss, Gradle, H2 Database, Flux, React.js, Bootstrap, Git, JUnit
 
-**IDE:** IntelliJ
+**IDE:** IntelliJ, Eclipse
 
 **Role:** UI Design, Frontend Developer (worked with Flux, React.js, Bootstrap, Git)
 
