@@ -22,7 +22,9 @@ Team work - group of 5 people
 
 **Role:** UI Design, Frontend Developer (worked with Flux, React.js, Bootstrap, Git)
 
-**Responsibilities:** https://github.com/aosmanovic/QSE_ASE_SS2015_G6/blob/master/Documentation/WorkingHoursAnela.pdf
+**Responsibilities:** 
+Worker and Superviser Workflow
+https://github.com/aosmanovic/QSE_ASE_SS2015_G6/blob/master/Documentation/WorkingHoursAnela.pdf
 
 **Project description**
 https://github.com/aosmanovic/QSE_ASE_SS2015_TimeManagement_G6/blob/master/Documentation/ProjectContract.pdf
